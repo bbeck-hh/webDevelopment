@@ -4,6 +4,7 @@
    ⬇
 */
 
+
 *,
 *::before,
 *::after {
@@ -64,6 +65,32 @@ li {
   margin: 0;
 }
 
+aside .user {
+  background-color: pink;
+  max-width:250px;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+aside .name {
+  font-size: 16px;
+}
+aside .bio {
+  font-size: 12px;
+  margin: 6px 0;
+}
+aside .location {
+  font-size: 10px;
+} 
+
+ul .bio {
+  display: none;
+}
+
+ul .location {
+  text-align: left;
+  color: darkslategray;
+}
 /*
   Part 1
 
