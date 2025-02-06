@@ -5,13 +5,17 @@
 /* Task 1: First, we want to adjust how the size of our elements is calculated in CSS. Do you know how to switch from "content-box" to "border-box"? */
 
 /* Your solution */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 
 /* Task 2: Let's work on some basic stylings that we want to apply to all elements in your code via inheritance. Which selector do we need for this? */
 
 /* Add selector */
- {
+body {
   font-family: monospace;
-  font-size: 1rem;
+  font-size: 1rem; 
   line-height: 1.5;
   background-color: LemonChiffon;
 }
@@ -31,7 +35,10 @@
 */
 
 .title {
-  /* Your solution */
+  background-color: white;
+  margin-top: 0;
+  padding: 10px;
+  text-align: center;
 }
 
 /* ------- Sections ------- */
@@ -45,8 +52,16 @@
 */
 
 section {
-  /* Your solution */
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-left: 5px solid orange;
 }
+
+section.favorite {
+  border-left-color: gold;
+}
+
 
 /* ------- Headings Part 2 ------- */
 
@@ -58,29 +73,40 @@ section {
 - Bonus: The border color of the "Favorite Pokémon" title should be "orange". Hint: You may need another CSS rule.
 */
 
-.subtitle {
-  /* Your solution */
+/* Add a border to the left and the right of the title only. The border should be 3px solid with the color "gold". */
+.title {
+  border-left: 3px solid gold;
+  border-right: 3px solid gold;
+  padding: 0 10px;
+  display: inline-block;
 }
+
+/* Bonus: The border color of the "Favorite Pokémon" title should be "orange". */
+section.favorite .subtitle {
+  border-left-color: orange;
+  border-right-color: orange;
+}
+
 
 /* ------- List ------- */
 
 /* Task 7: Finally, let's style our list with of favorite Pokémon. Which selector do we need? Also, add values for padding. */
 
 /* Add selector */
- {
+ ul {
   list-style: "🧡";
-  padding-left: /* Add value */ ;
+  padding-left: 20px;/* Add value */ ;
 }
 
 /* Add selector */
- {
-  padding-left: /* Add value */ ;
+ li{
+  padding-left: 30px;/* Add value */ ;
 }
 
 /* ------- The End -------- */
 
 .image-fluid {
-  width: 100%;
+  max-width: 50%;
   height: auto;
 }
 
