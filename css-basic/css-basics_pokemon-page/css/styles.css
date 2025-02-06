@@ -1,3 +1,10 @@
+/* Set css variables -> https://www.w3schools.com/css/css3_variables.asp */
+:root {
+  --primary-border-color: orange;
+  --border-poke-style: 3px solid gold
+}
+
+
 /* The exercise starts here! Sometimes you may need to add a class attribute to some elements in your HTML structure, but otherwise, it won't be necessary to adjust the HTML to solve the tasks. */
 
 /* ------- General Styles ------- */
@@ -55,7 +62,7 @@ section {
   background-color: white;
   padding: 20px;
   margin: 10px;
-  border-left: 5px solid orange;
+  border-left: 5px solid var(--primary-border-color);
 }
 
 section.favorite {
@@ -75,16 +82,16 @@ section.favorite {
 
 /* Add a border to the left and the right of the title only. The border should be 3px solid with the color "gold". */
 .title {
-  border-left: 3px solid gold;
-  border-right: 3px solid gold;
+  border-left: --border-poke-style;
+  border-right: --border-poke-style;
   padding: 0 10px;
   display: inline-block;
 }
 
 /* Bonus: The border color of the "Favorite Pokémon" title should be "orange". */
 section.favorite .subtitle {
-  border-left-color: orange;
-  border-right-color: orange;
+  border-left-color: var(--primary-border-color);
+  border-right-color:var(--primary-border-color);
 }
 
 
