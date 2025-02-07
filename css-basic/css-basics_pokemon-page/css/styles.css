@@ -1,10 +1,8 @@
 /* Set css variables -> https://www.w3schools.com/css/css3_variables.asp */
 :root {
   --primary-border-color: orange;
-  --border-poke-style: 3px solid gold
+  --border-poke-style: 3px solid gold;
 }
-
-
 /* The exercise starts here! Sometimes you may need to add a class attribute to some elements in your HTML structure, but otherwise, it won't be necessary to adjust the HTML to solve the tasks. */
 
 /* ------- General Styles ------- */
@@ -30,7 +28,13 @@ body {
 /* ------- Headings Part 1 ------- */
 
 /* Task 3: Setting the line height to 1.5 is good for texts, for accessibility reasons, but it seems too much for headings. Let's change this by giving our headings a line height of 1.2. */
+h1, h2 {
+  line-height: 1.2;
+}
 
+p {
+  line-height: 1.5;
+}
 /* Your solution */
 
 /* Task 4: Now we want to give our h1 element more styles to shine! Add the following styles by writing the correct declarations inside the next CSS rule:
@@ -41,7 +45,8 @@ body {
 - Center the text of the heading
 */
 
-.title {
+
+h1 {
   background-color: white;
   margin-top: 0;
   padding: 10px;
@@ -65,7 +70,7 @@ section {
   border-left: 5px solid var(--primary-border-color);
 }
 
-section.favorite {
+section.favourites {
   border-left-color: gold;
 }
 
@@ -82,14 +87,14 @@ section.favorite {
 
 /* Add a border to the left and the right of the title only. The border should be 3px solid with the color "gold". */
 .title {
-  border-left: --border-poke-style;
-  border-right: --border-poke-style;
+  border-left: var(--border-poke-style);
+  border-right:var(--border-poke-style);
   padding: 0 10px;
   display: inline-block;
 }
 
 /* Bonus: The border color of the "Favorite Pokémon" title should be "orange". */
-section.favorite .subtitle {
+section.favourites .subtitle {
   border-left-color: var(--primary-border-color);
   border-right-color:var(--primary-border-color);
 }
