@@ -45,7 +45,7 @@ Ohne dieses Meta-Tag würden viele Geräte, insbesondere Mobiltelefone, versuche
 - **Beispiel:**
   - Wenn die Standard-Schriftgröße des Root-Elements 16px beträgt, entspricht `1rem` genau 16px.
   - Eine Angabe wie `font-size: 2rem;` bedeutet, dass die Schriftgröße doppelt so groß wie die des Root-Elements ist.
-- **Vorteil:** `rem` bietet mehr Vorhersehbarkeit und Konsistenz im gesamten Layout, da es nicht von verschachtelten Elementen beeinflusst wird[1][5][7].
+- **Vorteil:** `rem` bietet mehr Vorhersehbarkeit und Konsistenz im gesamten Layout, da es nicht von verschachtelten Elementen beeinflusst wird.
 
 ### **vh (Viewport Height)**
 - **Definition:** Die Einheit `vh` ist relativ zur Höhe des Viewports. `1vh` entspricht 1 % der Gesamthöhe des sichtbaren Browserfensters.
