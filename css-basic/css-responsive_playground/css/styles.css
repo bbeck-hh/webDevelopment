@@ -11,7 +11,12 @@ carefully. */
   --color-granite: #252629;
   --color-water-10: #f3f5f9;
   --color-foam: #ffffff;
+
+  --main-bg: hsl(14, 91%, 91%);
+  --dark-bg: hsl(220, 15%, 15%); /* Dark background color */
 }
+
+
 
 *,
 *::before,
@@ -22,8 +27,8 @@ carefully. */
 body {
   margin: 0;
   font-family: system-ui;
-
   background-color: var(--color-foam);
+
 }
 
 h1 {
@@ -62,7 +67,7 @@ h1 {
 .box--one {
   background-color: lightblue;
 
-  width: 100px;
+  width: 100%;
   height: 100px;
 }
 
@@ -72,12 +77,33 @@ h1 {
   width: 100px;
   height: 100px;
 }
+/* Width changes to 200px for viewports wider than 599px */
+@media (min-width: 600px) {
+  .box--two {
+    width: 200px;
+  }
+}
+
+/* Width changes to 400px for viewports wider than 1199px */
+@media (min-width: 1200px) {
+  .box--two {
+    width: 400px;
+  }
+}
 
 .box--three {
   background-color: lightpink;
-
   width: 50px;
   height: 250px;
+}
+@media (orientation: landscape) {
+  .box--three {
+    height: 0;
+    overflow: hidden; /* Hide content */
+    padding: 0;       /* Remove padding */
+    margin: 0;        /* Remove margin */
+    border: none;      /* Remove border */
+  }
 }
 
 .box--four {
@@ -86,9 +112,33 @@ h1 {
   width: 100px;
   height: 100px;
 }
+@media (prefers-color-scheme: dark) {
+  .box--four  {
+    background-color: lime;
+  }
+}
 
 .box--five {
   width: 100%;
+}
+picture {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center center;
+  background-image: url('../img/cat_small.jpg');
+}
+@media (min-width: 600px) {
+  .cat{
+    background-image: url('../img/cat_medium.jpg'); /* Image for viewports above 599px */
+  }
+}
+
+@media (min-width: 1200px) {
+  .cat {
+    background-image: url('../img/cat_large.jpg'); /* Image for viewports above 1199px */
+  }
 }
 
 .box--five img {
