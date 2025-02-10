@@ -4,8 +4,8 @@
 }
   
 .main-content__title {
-    color: hsla(var(--main-text), 0.9);
-    background: var(--main-title-bg);
+    color: hsl(var(--main-text)/ 90%);
+    background-color: hsl(var(--main-title-bg) / 12%);
     margin: 0 0 20px 0;
     padding: 10px;
 }
