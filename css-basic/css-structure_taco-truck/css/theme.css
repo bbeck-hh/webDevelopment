@@ -14,7 +14,7 @@
   /* start hsla */
   --body-bg: 14, 91%, 91%;
 
-  --header-bg: hsl(14, 100%, 53%);
+  --header-bg: 14, 100%, 53%;
   --header-text: hsl(265, 100%, 30%);
 
   --main-bg: hsl(14, 91%, 91%);
