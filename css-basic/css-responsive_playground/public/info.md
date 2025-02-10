@@ -27,7 +27,7 @@ no media query (default): extra-small, xs, mobile
 Dieses Meta-Viewport-Tag erfüllt mehrere wichtige Funktionen:
 Es stellt sicher, dass die tatsächliche Gerätebreite für die Darstellung der Webseite verwendet wird3.
 Es verhindert, dass mobile Geräte die Webseite automatisch verkleinern, um sie auf dem Bildschirm anzupassen3.
-Es ermöglicht die korrekte Anwendung von CSS-Media-Queries, indem es dem Browser mitteilt, wie er die Seite darstellen und skalieren soll8.
+Es ermöglicht die korrekte Anwendung von CSS-Media-Queries, indem es dem Browser mitteilt, wie er die Seite darstellen und skalieren soll.
 Ohne dieses Meta-Tag würden viele Geräte, insbesondere Mobiltelefone, versuchen, die Webseite so zu verkleinern, dass sie auf den Bildschirm passt, was die Wirksamkeit von Media Queries beeinträchtigen würde3. Das Meta-Viewport-Tag sorgt dafür, dass der sichtbare Bereich (Viewport) der Webseite korrekt definiert ist und responsive Designs wie beabsichtigt funktionieren
 
 
@@ -38,7 +38,7 @@ Ohne dieses Meta-Tag würden viele Geräte, insbesondere Mobiltelefone, versuche
 - **Beispiel:**
   - Wenn die Schriftgröße des übergeordneten Elements 16px beträgt, entspricht `1em` genau 16px. 
   - Eine Angabe wie `font-size: 2em;` bedeutet, dass die Schriftgröße doppelt so groß wie die des übergeordneten Elements ist.
-- **Vorteil:** Änderungen an der Schriftgröße eines Containers wirken sich automatisch auf alle untergeordneten Elemente aus, was ein flexibles und konsistentes Design ermöglicht[1][3][7].
+- **Vorteil:** Änderungen an der Schriftgröße eines Containers wirken sich automatisch auf alle untergeordneten Elemente aus, was ein flexibles und konsistentes Design ermöglicht.
 
 ### **rem**
 - **Definition:** Die Einheit `rem` (Root em) bezieht sich immer auf die Schriftgröße des Root-Elements (`<html>`). Dies macht sie unabhängig von der Hierarchie der Elemente.
