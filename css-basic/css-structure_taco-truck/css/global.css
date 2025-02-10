@@ -9,5 +9,5 @@ body {
   gap: 10px;
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: var(--body-bg);
+  background-color: hsl(var(--body-bg) / 60%);
 }

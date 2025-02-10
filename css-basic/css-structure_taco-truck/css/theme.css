@@ -8,19 +8,19 @@
   --main-text: #ff4a11;
   --main-title-bg: #3f0097;
 
-  --card-bg: #8336ff7b; */
-  --card-text: #201e1d;
+  --card-bg: #8336ff7b; 
+  --card-text: #201e1d;*/
 
   /* start hsla */
   --body-bg: 14, 91%, 91%;
 
-  --header-bg: 14, 100%, 53%;
-  --header-text: hsl(265, 100%, 30%);
+  --header-bg: 14 100% 53%;
+  --header-text: 265 100% 30%;
 
-  --main-bg: hsl(14, 91%, 91%);
-  --main-text: hsl(14, 100%, 53%);
-  --main-title-bg: hsl(265, 100%, 30%);
+  --main-bg: 14 91% 91%;
+  --main-text:14 100% 53%;
+  --main-title-bg: 265 100% 30%;
 
-  --card-bg: hsla(263, 100%, 61%, 0.482);
-  --card-text: hsl(20, 5%, 12%);
+  --card-bg: 263 100% 61% 0.482;
+  --card-text: 20 5% 12%;
 }
