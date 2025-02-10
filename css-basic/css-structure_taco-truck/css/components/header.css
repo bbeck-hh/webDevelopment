@@ -1,7 +1,8 @@
 .header {
     position: sticky;
     top: 0;
-    background: var(--header-bg);
+    /* background: var(--header-bg); */
+    background-color: hsl(var(--header-bg) / 60%);
     color: var(--header-text);
     padding: 20px;
 }
