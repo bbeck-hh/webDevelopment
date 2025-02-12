@@ -1,2 +1,2 @@
 # JS Basic
-- nodeJS
+- JS Basics and Variables
