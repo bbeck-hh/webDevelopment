@@ -50,3 +50,9 @@ button:hover {
     background-color: var(--secondary-light);
     color: var(--primary);
 }
+
+.adultSentence {
+    color: var(--black);
+    background-color: var(--accent);
+    padding: .25rem;
+}
