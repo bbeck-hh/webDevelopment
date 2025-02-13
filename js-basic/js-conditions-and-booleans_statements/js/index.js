@@ -28,15 +28,27 @@ console.log(`
 ${'*'.repeat(10)} Part 3 Hotdogs ${'*'.repeat(10)}`);
 // Part 3: Hotdogs
 const numberOfHotdogs = 2;
+// if (numberOfHotdogs < 5) {
+//     console.log(`You'll pay ${numberOfHotdogs * 2} euros for ${numberOfHotdogs} hotdogs.`);
+// } else if (numberOfHotdogs < 100) {
+//     console.log(`You'll pay ${numberOfHotdogs * 1.5} euros for ${numberOfHotdogs} hotdogs.`);
+// } else if (numberOfHotdogs < 1000000) {
+//     console.log(`You'll pay ${numberOfHotdogs} euros for ${numberOfHotdogs} hotdogs.`);
+// } else {
+//     console.log(`You'll pay ${numberOfHotdogs * 0.1} euros for ${numberOfHotdogs} hotdogs.`);
+// }
+
+let price = 0;
 if (numberOfHotdogs < 5) {
-    console.log(`You'll pay ${numberOfHotdogs * 2} euros for ${numberOfHotdogs} hotdogs.`);
+    price = 2;
 } else if (numberOfHotdogs < 100) {
-    console.log(`You'll pay ${numberOfHotdogs * 1.5} euros for ${numberOfHotdogs} hotdogs.`);
+    price = 1.5;
 } else if (numberOfHotdogs < 1000000) {
-    console.log(`You'll pay ${numberOfHotdogs} euros for ${numberOfHotdogs} hotdogs.`);
+    price = 1;
 } else {
-    console.log(`You'll pay ${numberOfHotdogs * 0.1} euros for ${numberOfHotdogs} hotdogs.`);
+    price = 0.1;
 }
+console.log(`You'll pay ${numberOfHotdogs * price} euros for ${numberOfHotdogs} hotdogs.`);
 
 console.log(`
 ${'*'.repeat(10)} Part 4: Daytime ${'*'.repeat(10)}`);
