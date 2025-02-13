@@ -30,9 +30,9 @@ ${'*'.repeat(10)} Part 3 Hotdogs ${'*'.repeat(10)}`);
 const numberOfHotdogs = 2;
 if (numberOfHotdogs < 5) {
     console.log(`You'll pay ${numberOfHotdogs * 2} euros for ${numberOfHotdogs} hotdogs.`);
-} else if (numberOfHotdogs >= 5 && numberOfHotdogs < 100) {
+} else if (numberOfHotdogs < 100) {
     console.log(`You'll pay ${numberOfHotdogs * 1.5} euros for ${numberOfHotdogs} hotdogs.`);
-} else if (numberOfHotdogs >= 100 && numberOfHotdogs < 1000000) {
+} else if (numberOfHotdogs < 1000000) {
     console.log(`You'll pay ${numberOfHotdogs} euros for ${numberOfHotdogs} hotdogs.`);
 } else {
     console.log(`You'll pay ${numberOfHotdogs * 0.1} euros for ${numberOfHotdogs} hotdogs.`);
