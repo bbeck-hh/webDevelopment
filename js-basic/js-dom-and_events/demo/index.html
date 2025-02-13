@@ -4,12 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<link rel="stylesheet" href="./css/button.css" />
+		<link rel="stylesheet" href="./css/styles.css" />
 		<script src="./js/index.js" defer></script>
 	</head>
 	<body data-js="root">
-		<button data-js="add-button" type="button">Enable Darkmode</button>
-		<button data-js="remove-button" type="button">Remove Darkmode</button>
-		<button data-js="toggle-button" type="button">Toggle Darkmode</button>
+		<section class="buttonToggle">
+			<button data-js="add-button" type="button">Enable Darkmode</button>
+			<button data-js="remove-button" type="button">Remove Darkmode</button>
+			<button data-js="toggle-button" type="button">Toggle Darkmode</button>
+		</section>
+		<section class="luckyNumber" data-js="luck-section">
+			<h1>Your number: <span data-js="lucky-number-display"></span></h1>
+			<button data-js="button">Try your luck</button>
+			<h2 data-js="outcome-display"></h2>
+		</section>
 	</body>
 </html>

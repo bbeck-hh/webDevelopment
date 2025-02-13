@@ -1,0 +1,8 @@
+@import "layout.css";
+@import "button.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
