@@ -37,9 +37,8 @@ switch (typeOutput) {
     case "object":
         if (Array.isArray(data)) {
             console.log("Ich bin ein Objekt aber vom Typ ein Array");
-        } else if (Object.name === null) {
-            console.log(`nichts da`);
-
+        } else if (data === null) {
+            console.log(`null -> nichts da`);
         } else {
             console.log(outputTyp);
         }
