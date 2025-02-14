@@ -1,3 +1,4 @@
+// https://github.com/neuefische/ber-web-25-1/blob/main/sessions/js-functions/solutions.md
 const box = document.querySelector("[data-js=box]");
 const redButton = document.querySelector("[data-js=js-red-button]");
 const greenButton = document.querySelector("[data-js=js-green-button]");
@@ -12,6 +13,8 @@ We want to add functionality to the buttons on this page. When a button is click
 */
 
 redButton.addEventListener("click", () => {
+  removeAllColors();
+  addColor("red");
   /*
   Use your functions to:
     - remove all classes
@@ -20,6 +23,8 @@ redButton.addEventListener("click", () => {
 });
 
 blueButton.addEventListener("click", () => {
+  removeAllColors();
+  addColor("blue");
   /*
   Use your functions to:
     - remove all classes
@@ -28,6 +33,8 @@ blueButton.addEventListener("click", () => {
 });
 
 greenButton.addEventListener("click", () => {
+  removeAllColors();
+  addColor("green");
   /*
   Use your functions to:
     - remove all classes
@@ -36,6 +43,8 @@ greenButton.addEventListener("click", () => {
 });
 
 grayButton.addEventListener("click", () => {
+  removeAllColors();
+  addColor("gray");
   /*
   Use your functions to:
     - remove all classes
@@ -44,3 +53,12 @@ grayButton.addEventListener("click", () => {
 });
 
 // Write your two functions below:
+
+
+function removeAllColors() {
+  box.classList.remove("red", "green", "blue", "gray");
+}
+
+function addColor(className) {
+  box.classList.add(className);
+}
