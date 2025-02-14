@@ -1,10 +1,14 @@
 console.clear();
-
+console.log(`
+${'*'.repeat(10)} EXERCISE 1 ${'*'.repeat(10)}`);
 // EXERCISE 1
 // Modify the array `exampleArray` so that it contains a number and a string.
 
-const exampleArray = [true];
+const exampleArray = [true, 23, "string"];
+console.log(exampleArray);
 
+console.log(`
+${'*'.repeat(10)} EXERCISE 2 ${'*'.repeat(10)}`);
 // EXERCISE 2
 // Nest an array inside `nestedArray`. After completing this, `nestedArray` should contain an array as one of its elements.
 
@@ -50,13 +54,8 @@ const unshiftedPets = ["dog", "cat", "rabbit"];
 const shiftedFruits = ["apple", "banana", "mango"];
 
 export {
-  exampleArray,
-  nestedArray,
-  firstNumber,
-  fruits,
-  nestedNumber,
-  petsWithPush,
-  fruitsWithPop,
-  unshiftedPets,
-  shiftedFruits,
+  exampleArray, firstNumber,
+  fruits, fruitsWithPop, nestedArray, nestedNumber,
+  petsWithPush, shiftedFruits, unshiftedPets
 };
+
