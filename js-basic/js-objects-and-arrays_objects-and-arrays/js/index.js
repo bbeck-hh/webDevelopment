@@ -1,5 +1,6 @@
 console.clear();
-
+console.log(`
+${'*'.repeat(10)} Start ${'*'.repeat(10)}`);
 const people = [
   {
     name: "Homer",
@@ -46,36 +47,48 @@ const people = [
     color_cloth: "orange",
   },
 ];
-
+console.log(`
+${'*'.repeat(10)} EXERCISE 1 ${'*'.repeat(10)}`);
 // EXERCISE 1
 // Set the variable `nameOfFirstPerson` to the name of the first person in the array.
 
-const nameOfFirstPerson = "change me";
+const nameOfFirstPerson = people[0].name;
+console.log(nameOfFirstPerson);
 
+console.log(`
+${'*'.repeat(10)} EXERCISE 2 ${'*'.repeat(10)}`);
 // EXERCISE 2
 // Set the variable `homersOtherFriends` to the other friends of Homer.
 
-const homersOtherFriends = "change me";
+const homersOtherFriends = people[0]["other friends"];
+console.log(homersOtherFriends);
 
+console.log(`
+${'*'.repeat(10)} EXERCISE 3 ${'*'.repeat(10)}`);
 // EXERCISE 3
 // Set the variable `ageOfThirdPerson` to the age of the third person.
 
-const ageOfThirdPerson = "change me";
+const ageOfThirdPerson = people[2].age;
+console.log(ageOfThirdPerson);
 
+console.log(`
+${'*'.repeat(10)} EXERCISE 4 ${'*'.repeat(10)}`);
 // EXERCISE 4
 // Set the variable `mothersNameOfSecondPerson` to the mother's name of the second person.
 
-const mothersNameOfSecondPerson = "change me";
+const mothersNameOfSecondPerson = people[1].parents["mothersName"];
+console.log(mothersNameOfSecondPerson);
 
+console.log(`
+${'*'.repeat(10)} EXERCISE 5 ${'*'.repeat(10)}`);
 // EXERCISE 5
 // Set the variable `animalTypeOfLisasPet` to the type of animal that Lisa has as a pet.
 
-const animalTypeOfLisasPet = "change me";
+const animalTypeOfLisasPet = people[3].pet["animal"];
+console.log(animalTypeOfLisasPet);
+
 
 export {
-  nameOfFirstPerson,
-  homersOtherFriends,
-  ageOfThirdPerson,
-  mothersNameOfSecondPerson,
-  animalTypeOfLisasPet,
+  ageOfThirdPerson, animalTypeOfLisasPet, homersOtherFriends, mothersNameOfSecondPerson, nameOfFirstPerson
 };
+
