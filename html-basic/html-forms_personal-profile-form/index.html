@@ -9,5 +9,62 @@
     <title>Personal Profile Form</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <h1 id="title">Create your Personal Profile</h1>
+
+    <form action="" aria-labelledby="title" data-js="form">
+      <p id="descriptionPersonalInformation">
+        We want to get to know you! Please enter your personal information
+      </p>
+
+      <fieldset aria-describedby="descriptionPersonalInformation">
+        <legend>Personal Information</legend>
+        <label for="input-lastname">First Name:</label>
+        <input
+          type="text"
+          id="input-firstname"
+          placeholder="Bitte den Vornamen eingeben"
+          required
+        />
+        <label for="input-lastname">Last Name:</label>
+        <input
+          type="text"
+          id="input-lastname"
+          placeholder="Bitte den Nachnamen eingeben"
+          required
+        />
+        <label for="input-birthday">Your Birthday:</label>
+        <input
+          type="date"
+          id="input-birthday"
+          aria-describedby="Bitte verrate uns dein Geburtsdatum"
+          required
+        />
+      </fieldset>
+      <p id="descriptionFurtherInformation">
+        Can you tell us a lttle bit more? We want to annoy you with unwanted
+        ads.
+      </p>
+      <fieldset aria-describedby="descriptionFurtherInformation">
+        <legend>Further Information</legend>
+        <label for="input-color">Favourite Color</label>
+        <input
+          type="text"
+          id="input-color"
+          placeholder="Bitte Lieblingsfarbe eingeben"
+        />
+
+        <label for="select-pet">What is your favourite pet?</label>
+        <select name="pet" id="select-pet">
+          <option value="">-- Please choose an option --</option>
+          <option value="cat">Cat</option>
+          <option value="dog">Dog</option>
+          <option value="fish">Fish</option>
+          <option value="bird">Bird</option>
+          <option value="other">Other</option>
+        </select>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
 </html>
