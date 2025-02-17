@@ -39,20 +39,3 @@ const switchValueButton = document.querySelector(
 // --v-- Write your code here --v--
 
 // --^-- End of Task 3 --^--
-
-
-function getElements(datajs) {
-  return document.querySelector(`[data-js=${datajs}]`);
-}
-
-const box = getElements("box");
-const colorInput = getElements("color-input");
-const radiusInput = getElements("radius-input");
-const rotationInput = getElements("rotation-input");
-console.log(`${box} ${colorInput} ${radiusInput} ${rotationInput}`);
-
-colorInput.addEventListener("input", () => {
-  const hue = colorInput.value;
-  console.log(`${hue} `);
-
-});
