@@ -3,10 +3,6 @@ console.clear();
 const form = document.querySelector('[data-js="form"]');
 const resultOutput = document.querySelector('[data-js="result"]');
 
-
-
-
-
 function add(a, b) {
   return a + b;
 }
