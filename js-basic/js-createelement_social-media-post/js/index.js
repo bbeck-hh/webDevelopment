@@ -8,7 +8,8 @@ function handleLikeButtonClick(event) {
 const likeButton = document.querySelector('[data-js="like-button"]');
 
 // Be lazy ;-)
-const createEle = (element) => document.createElement(element);
+const createEle = (element) => document.createElement(
+  element);
 const addCss = (htmlElement, cssClass) => htmlElement.classList.add(cssClass);
 
 // Create const for the html elements
