@@ -30,6 +30,9 @@ pElement.textContent = "Hello, like me or not";
 spanElement.textContent = "@timetogo";
 buttonElement.textContent = "♥ Like";
 
+// Add attribute data-js
+buttonElement.setAttribute("data-js", "like-button");
+
 // Add the elements and nest them
 footerElement.append(spanElement, buttonElement);
 articleElement.append(pElement, footerElement);
