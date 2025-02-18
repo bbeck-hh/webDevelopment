@@ -3,6 +3,10 @@ console.clear();
 const form = document.querySelector('[data-js="form"]');
 const resultOutput = document.querySelector('[data-js="result"]');
 
+const quokka = { isAwesome: true, nodeVersion: process.version };
+
+console.log(quokka);
+
 function add(a, b) {
   return a + b;
 }
