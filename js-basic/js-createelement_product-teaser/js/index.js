@@ -10,11 +10,11 @@ const price = "149,99 €";
 const imageSrc =
   "https://unsplash.com/photos/3VOTHTrE614/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU5NTM3NTA2&force=true&w=640";
 
-// Create the Element
+// Create the element(card)
 const newProductTeaser = document.createElement("article");
-// Style the Element -> add class 
+// Style the element -> add class 
 newProductTeaser.classList.add("product");
-// Fill the Element with content
+// Fill the element with content
 newProductTeaser.innerHTML = `
     <section class="product__body">
       <div class="product__text-container">
@@ -42,13 +42,16 @@ newProductTeaser.innerHTML = `
     </footer>
   `;
 
-// Place the Element at the end from the body
+// Place the element at the end from the body
 document.body.append(newProductTeaser);
 
 // Get the buy button per class
-const buyButton = document.querySelector(".product__buy-button");
+// document.querySelector(".product__buy-button");
+const buyButton = document.getElementsByClassName("product__buy-button");
+console.log(buyButton);
+
 
 // Give the button something to do -> click function
-buyButton.addEventListener("click", () => {
+buyButton[1].addEventListener("click", () => {
   console.log(`Buy the fish: ${name} for ${price}.`);
 });
