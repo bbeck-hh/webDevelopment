@@ -10,8 +10,12 @@ const price = "149,99 €";
 const imageSrc =
   "https://unsplash.com/photos/3VOTHTrE614/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU5NTM3NTA2&force=true&w=640";
 
-const newProductTeaser = `
-  <article class="product">
+// Create the Element
+const newProductTeaser = document.createElement("article");
+// Style the Element -> add class 
+newProductTeaser.classList.add("product");
+// Fill the Element with content
+newProductTeaser.innerHTML = `
     <section class="product__body">
       <div class="product__text-container">
         <h2 class="product__name">${name} </h2>
@@ -36,15 +40,15 @@ const newProductTeaser = `
       <span class="product__price">${price} </span>
       <button type="button" class="product__buy-button">Buy</button>
     </footer>
-  </article>
   `;
 
-document.body.innerHTML += newProductTeaser;
+// Place the Element at the end from the body
+document.body.append(newProductTeaser);
 
-// Keine wirklich Lösung!! Da kein wirklicher "Anfasser"
+// Get the buy button per class
 const buyButton = document.querySelector(".product__buy-button");
 
-// MAn könnte über die Element zählen
+// Give the button something to do -> click function
 buyButton.addEventListener("click", () => {
-  console.log(`Produkt gekauft: ${name} zum Preis von ${price} `);
+  console.log(`Buy the fish: ${name} for ${price}.`);
 });
