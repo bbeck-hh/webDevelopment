@@ -123,3 +123,24 @@ const pixelValues = [
 ];
 
 const canvas = document.querySelector('[data-js="canvas"]');
+
+// use own function 4 create and add
+const toCreate = (tagName) => document.createElement(tagName);
+const addCss = (htmlElement, cssClass) => htmlElement.classList.add(cssClass);
+
+
+console.log(`Anzahl der Elemente im Array: ${pixelValues.length}`);
+
+for (const elementValue of pixelValues) {
+  console.log(`Hier die Elemente mit ihren Werten: ${elementValue}`);
+  // Es muss für jedes Element im Array ein div erstellt werden
+  // und die Klasse pixel zugewiesen werden
+  // Anschließend muss für jedes Element im Array die Farbe ausgelesen
+  // und dann die Farbe als Hintergrundfarbe gesetzt werden
+  for (const color of elementValue) {
+    const pixelElement = toCreate("div");
+    addCss(pixelElement, "pixel");
+    pixelElement.style.backgroundColor = color;
+    canvas.appendChild(pixelElement);
+  }
+}
