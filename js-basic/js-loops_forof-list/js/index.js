@@ -14,6 +14,12 @@ const programmingLanguages = [
   "PHP",
   "Ruby",
 ];
+for (const programLanguage of programmingLanguages) {
+  const li = document.createElement("li");
+  li.textContent = programLanguage;
+  //console.log(li);
+  ol.append(li);
+}
 
 // --v-- write or modify code below this line --v--
 
