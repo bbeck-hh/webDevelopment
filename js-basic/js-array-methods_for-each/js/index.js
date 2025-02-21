@@ -24,6 +24,7 @@ colors.forEach(renderColorBox)
 
 function renderColorBox(color) {
   const div = document.createElement("div");
+  // div.className="color-box" Überschreibt alle anderen class die vorhanden wären!
   div.classList.add("color-box");
   div.style.backgroundColor = color;
   output.appendChild(div);
