@@ -29,3 +29,5 @@ function renderColorBox(color) {
   div.style.backgroundColor = color;
   output.appendChild(div);
 }
+const addCssClass = (htmlElement, cssClass) => htmlElement.classList.add("cssClass");
+addCssClass()
