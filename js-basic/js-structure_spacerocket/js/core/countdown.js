@@ -2,6 +2,8 @@ import { getRocket } from "./rocket.js";
 
 export function countdown() {
   const rocket = getRocket();
+  console.log(`Cowntdown geht los!`);
+
   if (rocket.liftoff) {
     throw new Error(
       "Cannot start countdown. Make sure to countdown before liftoff."
