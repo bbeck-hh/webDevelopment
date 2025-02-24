@@ -1,5 +1,5 @@
 import { Card } from "../components/Card/Card.js";
-import { renderElement } from "./utils.js";
+import { renderElement } from "../utils/utils.js";
 
 console.clear();
 const url = "https://swapi.py4e.com/api/people";
@@ -59,9 +59,23 @@ async function fetchDataAndRender(url) {
 
     data.results.forEach((characterData) => {
       console.log(`Hero: ${characterData.name} `);
-      let card = Card(characterData); // Übergabe der Daten aus der API an Card
-      renderElement(card); // Nun die fertige Card im Browser anzeigen lassen
+
+      // Übergabe der Daten aus der API an Card
+      let card = Card(characterData);
+
+      // Nun die fertige Card im Browser anzeigen lassen
+      renderElement(card);
+
     });
+
+    // Komplettes Chaining
+    // data.results
+    //   .map(characterData => {
+    //     console.log(`Hero: ${characterData.name}`);
+    //     return Card(characterData);
+    //   })
+    //   .forEach(card => renderElement(card));
+
 
 
 
