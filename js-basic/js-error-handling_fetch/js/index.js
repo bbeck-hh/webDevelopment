@@ -8,9 +8,27 @@ async function fetchUserData(url) {
   try {
     const response = await fetch(url);
 
-    return await response.json();
-  } catch (error) {
-    return { error: error.message };
+    // Check first of all if we had a connection!
+    if (!response.ok) {
+      // It make sense to have diffrents user message for different response code -> build a switch
+      throw new Error(`The requested page could not be found (Error ${response.status}).`);
+    }
+
+    const contentType = response.headers.get("content-type");
+    console.log(contentType);
+
+    // WE CAN USE A ELSE IF !!
+    // Check first if contentType is true(not undefiend, null, empty.. )
+    // Check then if the contentType include 'application/json'
+    // Both of this must be true!
+    if (contentType && contentType.includes('application/json')) {
+      return await response.json();
+    } else {
+      // Write here the User Error message in the Error Object. 
+      throw new Error(`Unexpected content type received.\nPlease check the response format.\nNeed: application/json\nGet: ${contentType}`);
+    }
+  } catch (x) {
+    return { error: x.message };
   }
 }
 
@@ -28,7 +46,6 @@ endpoints.forEach((endpoint) => {
 
   button.addEventListener("click", async () => {
     const result = await fetchUserData(endpoint.url);
-
     if (result.error) {
       errorElement.textContent = result.error;
       userElement.innerHTML = "No user data available.";
