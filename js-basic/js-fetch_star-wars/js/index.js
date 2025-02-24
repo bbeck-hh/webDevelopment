@@ -2,7 +2,7 @@ import { Card } from "../components/Card/Card.js";
 import { renderElement } from "./utils.js";
 
 console.clear();
-
+const url = "https://swapi.py4e.com/api/people";
 const EXAMPLE_DATA = {
   name: "Luke Skywalker",
   height: "172",
@@ -37,10 +37,37 @@ const EXAMPLE_DATA = {
 const firstCard = Card(EXAMPLE_DATA);
 renderElement(firstCard);
 
-fetchDataAndRender();
+fetchDataAndRender(url);
 
 // --v-- your code below this line --v--
 
-function fetchDataAndRender() {
-  fetch(); // ?
+async function fetchDataAndRender(url) {
+
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      console.log("there was an error");
+      return;
+    }
+
+    const data = await response.json(); // json parse here
+    // Anzahl Datensätze
+    const countData = data.results.length;
+    console.log(`Anzahl der zu generierenden Cards: ${countData} `);
+
+
+    data.results.forEach((characterData) => {
+      console.log(`Hero: ${characterData.name} `);
+      let card = Card(characterData); // Übergabe der Daten aus der API an Card
+      renderElement(card); // Nun die fertige Card im Browser anzeigen lassen
+    });
+
+
+
+  } catch (error) {
+    console.log(`Hier im catch Block: ${error} `);
+
+  }
+
 }
