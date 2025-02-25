@@ -24,6 +24,7 @@ form.addEventListener("submit", (event) => {
     output.innerText = operations[operation](firstNumber, secondNumber)
   } catch (error) {
     // error message comes from line 12
+    //return { error: error.message };
     output.innerText = error;
   }
 
