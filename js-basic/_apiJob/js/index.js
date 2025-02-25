@@ -1,3 +1,5 @@
+"use strict";
+
 import { renderElement } from "../../js-fetch_star-wars/js/utils.js";
 import { JobCard } from "../components/cards/JobCard.js";
 

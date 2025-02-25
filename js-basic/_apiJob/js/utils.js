@@ -1,3 +1,4 @@
+"use strict";
 const root = document.getElementById("root");
 
 export function renderElement(element) {
