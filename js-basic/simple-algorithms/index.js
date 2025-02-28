@@ -1,25 +1,49 @@
 // Find the maximum
 function maxOfTwoNumbers(num1, num2) {
   // TODO:  
+  if (num1 > num2) {
+    return num1;
+  }
+  return num2;
+
+  // return num1 > num2 ? num1 : num2;
 }
+console.log(">" + maxOfTwoNumbers(13, 5));
 
-
+console.log(`
+${'*'.repeat(10)} Find the longest word ${'*'.repeat(10)}`);
 // Find the longest word
 
 const words = ["Jaws", "Up", "Alien", "Gravity", "Inception", "Psycho",];
 
 function findLongestWord(words) {
-  // TODO:  
+  let longestWord = "";
+  words.forEach(word => {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  });
+  return longestWord;
 }
+console.log(`The longest word is: ${findLongestWord(words)}`);
 
+console.log(`
+${'*'.repeat(10)} Calculate the sum ${'*'.repeat(10)}`);
 // Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(numbers) {
-  // TODO:  
+  let sum = 0;
+  numbers.forEach((number) => {
+    sum += number;
+  });
+  return sum;
 }
+console.log(`The sum of the numbers is: ${sumNumbers(numbers)}`);
 
+console.log(`
+${'*'.repeat(10)}  Calculate the average length of the words  ${'*'.repeat(10)}`);
 // Calculate the average length of the words 
 
 const words2 = [
@@ -36,8 +60,19 @@ const words2 = [
 ];
 
 function averageWordLength(words) {
-  // TODO:
+  // Sum of the length of each word
+  // Use array forEch to get the length of each word
+  // sum = sum + word.length
+  // Number of words
+  // Divide by the number of words
+  let sum = 0;
+  words.forEach((word) => {
+    sum += word.length;
+  });
+  return sum / words.length;
+
 }
+console.log(`The average length of the words is: ${averageWordLength(words2)}`);
 
 // Unique arrays - return an array without duplicates
 
@@ -145,5 +180,5 @@ module.exports = {
   doesWordExist,
   howManyTimes,
   sum,
-  greatestProduct 
+  greatestProduct
 }
