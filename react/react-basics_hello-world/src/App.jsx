@@ -1,5 +1,5 @@
 import Welcome from "./components/welcome.jsx";
-import "./styles.css";
+import "./styles/styles.css";
 
 const name = "World";
 const currentYear2 = new Date().getFullYear();
