@@ -9,3 +9,12 @@ body {
   font-family: system-ui;
   text-align: center;
 }
+
+.helloDemo {
+  background-color: aqua;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+}
