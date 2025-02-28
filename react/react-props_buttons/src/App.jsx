@@ -1,24 +1,5 @@
-
-function Button({ color, disabled, text, onSchnurr }) {
-  return (
-    <button
-      style={{
-        backgroundColor: color,
-        height: "80px",
-        cursor: "pointer",
-      }}
-      disabled={false}
-      onClick={onSchnurr}>
-      {text}
-    </button>
-  );
-}
-
-function schnurr() {
-  const p = document.createElement("p");
-  p.textContent = "Schnurr!!";
-  document.body.append(p);
-}
+import { Button } from "./components/Buttons";
+import { schnurr } from "./utils/schnurr";
 
 export default function App() {
   const color = "#ff3399";
