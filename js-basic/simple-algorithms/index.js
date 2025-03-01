@@ -138,12 +138,27 @@ const wordsCount = [
   'matter',
   'truth',
   'disobedience',
-  'matter'
+  'matter',
+  'machine',
 ];
 
 function howManyTimes(haystack, needle) {
-  // TODO:
+  // create a counter variable
+  // Use an array(haystack) an iterate over it
+  // use an if statement to check if the word is the same as the needle
+  // if true set counter to counter + 1
+  // return the counter
+  let counter = 0;
+  haystack.forEach((word) => {
+    if (word === needle) {
+      counter++;
+    }
+  })
+  return counter;
 }
+console.log(`Here is the haystack: ${wordsCount}`);
+console.log(`The needle(word) 'matter' is in the hasystack(array) ${howManyTimes(wordsCount, 'matter')} times`);
+
 
 // Bonus: A generic sum function
 // for strings use the length of the string, for booleans use 1 and 0
