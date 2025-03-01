@@ -74,8 +74,9 @@ function averageWordLength(words) {
 }
 console.log(`The average length of the words is: ${averageWordLength(words2)}`);
 
+console.log(`
+${'*'.repeat(10)} Unique arrays - return an array without duplicates ${'*'.repeat(10)}`);
 // Unique arrays - return an array without duplicates
-
 const words3 = [
   'crab',
   'poison',
@@ -92,15 +93,38 @@ const words3 = [
 
 function uniquifyArray(words) {
   // TODO:
+  // Create a new array to store the unique words
+  // itearate over the array && check if the word is already in the new array
+  // if not, add it to the new array
+  const uniqueWords = [];
+  words3.forEach((word) => {
+    if (!uniqueWords.includes(word)) {
+      uniqueWords.push(word);
+    }
+  })
+  return uniqueWords;
 }
+console.log(`Here are the orignal words: ${words3}`);
 
+console.log(`The unique words are: ${uniquifyArray(words3)}`);
+
+
+console.log(`
+${'*'.repeat(10)} Find elements ${'*'.repeat(10)}`);
 // Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
 function doesWordExist(haystack, needle) {
-  // TODO:
+  // array method includes(true or false) to check if the word is in the array
+  haystack.includes(needle);
 }
+console.log(`Here is the haystack: ${wordsFind}`);
 
+console.log(`The needle(word) 'machine' is in the hasystack(array): ${doesWordExist(wordsFind, 'machine')}`);
+
+
+console.log(`
+${'*'.repeat(10)}  Count repetition ${'*'.repeat(10)}`);
 // Count repetition
 
 const wordsCount = [
