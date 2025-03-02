@@ -1,3 +1,6 @@
+// https://github.com/wd-bootcamp/web-exercises/blob/main/sessions/mock-interview-1/simple-algorithms_solutions/index.js
+
+
 // Find the maximum
 function maxOfTwoNumbers(num1, num2) {
   // TODO:  
@@ -9,6 +12,7 @@ function maxOfTwoNumbers(num1, num2) {
   // return num1 > num2 ? num1 : num2;
 }
 console.log(">" + maxOfTwoNumbers(13, 5));
+//#####################################################################
 
 console.log(`
 ${'*'.repeat(10)} Find the longest word ${'*'.repeat(10)}`);
@@ -26,6 +30,7 @@ function findLongestWord(words) {
   return longestWord;
 }
 console.log(`The longest word is: ${findLongestWord(words)}`);
+//#####################################################################
 
 console.log(`
 ${'*'.repeat(10)} Calculate the sum ${'*'.repeat(10)}`);
@@ -41,6 +46,7 @@ function sumNumbers(numbers) {
   return sum;
 }
 console.log(`The sum of the numbers is: ${sumNumbers(numbers)}`);
+//#####################################################################
 
 console.log(`
 ${'*'.repeat(10)}  Calculate the average length of the words  ${'*'.repeat(10)}`);
@@ -73,6 +79,7 @@ function averageWordLength(words) {
 
 }
 console.log(`The average length of the words is: ${averageWordLength(words2)}`);
+//#####################################################################
 
 console.log(`
 ${'*'.repeat(10)} Unique arrays - return an array without duplicates ${'*'.repeat(10)}`);
@@ -100,14 +107,14 @@ function uniquifyArray(words) {
   words3.forEach((word) => {
     if (!uniqueWords.includes(word)) {
       uniqueWords.push(word);
+
     }
   })
   return uniqueWords;
 }
 console.log(`Here are the orignal words: ${words3}`);
-
 console.log(`The unique words are: ${uniquifyArray(words3)}`);
-
+//#####################################################################
 
 console.log(`
 ${'*'.repeat(10)} Find elements ${'*'.repeat(10)}`);
@@ -119,9 +126,8 @@ function doesWordExist(haystack, needle) {
   haystack.includes(needle);
 }
 console.log(`Here is the haystack: ${wordsFind}`);
-
 console.log(`The needle(word) 'machine' is in the hasystack(array): ${doesWordExist(wordsFind, 'machine')}`);
-
+//#####################################################################
 
 console.log(`
 ${'*'.repeat(10)}  Count repetition ${'*'.repeat(10)}`);
@@ -147,19 +153,27 @@ function howManyTimes(haystack, needle) {
   // Use an array(haystack) an iterate over it
   // use an if statement to check if the word is the same as the needle
   // if true set counter to counter + 1
-  // return the counter
+  // return the counter -> after the loop!
   let counter = 0;
-  haystack.forEach((word) => {
+  let indexFromDuplicate = [];
+  haystack.forEach((word, index) => {
     if (word === needle) {
       counter++;
+      indexFromDuplicate.push(index + 1); // Start counting the index array from 1
     }
   })
-  return counter;
+  return { counter, indexFromDuplicate }; // store the counter and the index of the duplicate
 }
+const result = howManyTimes(wordsCount, 'matter');
+
 console.log(`Here is the haystack: ${wordsCount}`);
-console.log(`The needle(word) 'matter' is in the hasystack(array) ${howManyTimes(wordsCount, 'matter')} times`);
+console.log(`The index of the first occurence of the word 'matter' is: ${howManyTimes(wordsCount, 'matter').indexFromDuplicate}`);
 
+console.log(`The needle(word) 'matter' occurs in the haystack(array) ${result.counter} times`);
+//#####################################################################
 
+console.log(`
+${'*'.repeat(10)} A generic sum function ${'*'.repeat(10)}`);
 // Bonus: A generic sum function
 // for strings use the length of the string, for booleans use 1 and 0
 const mixedArray = [
@@ -176,9 +190,31 @@ const mixedArray = [
 ];
 
 function sum(array) {
-  // TODO:
+  // create a sum variable
+  // iterate over the array(mixedArray)
+  // check the type of the element -> if statement
+  // if string -> sum = sum + element.length
+  // if number -> sum = sum + element
+  // if boolean -> sum = sum + 1 or 0
+  // return the sum
+  let sum = 0;
+  mixedArray.forEach((arrElement) => {
+    if (typeof arrElement === 'string') {
+      sum += arrElement.length;
+    } else if (typeof arrElement === 'number') {
+      sum += arrElement;
+    } else if (typeof arrElement === 'boolean') {
+      sum += arrElement ? 1 : 0;
+    }
+  })
+  return sum;
 }
+console.log(`The sum of the mixed array is: ${sum(mixedArray)}`);
+//#####################################################################
 
+
+console.log(`
+${'*'.repeat(10)} Write a function that calculates ... ${'*'.repeat(10)}`);
 // Bonus: Write a function that calculates the greatest product of four
 // numbers that is either horizontally or vertically in the array
 
@@ -204,11 +240,52 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+const matrixTest = [
+  [1, 2, 2, 1, 4, 2, 2, 1],
+  [2, 4, 2, 2, 3, 4, 1, 2],
+  [1, 4, 2, 3, 2, 3, 4, 3],
+  [1, 2, 2, 1, 2, 2, 4]
+]
 
 function greatestProduct(matrix) {
-  // TODO:
+  // Create two variables (prodHorizontal, prodVertical) to store the greatest product
+  // Iterate over the matrix and calculate the product of 2 numbers horizontally
+  // NestedArray - Start(matrix) with the first row and multiply the first 2 numbers, then go to the next 2 numbers
+  // Check with if statement wich product is graeter and store the greatest in prodHorizontal variable
+
+  // Iterate over the matrix and calculate the product of 2 numbers vertically,
+  //  and use the index row0[0] x row1[0] x row2[0] x row3[0] then go to row0[1] x row1[1] x row2[1] x row3[1]
+  // Check with if statement wich product is graeter and store the greatest in prodVertical variable.
+
+  let maxProduct = 0;
+  // Horizontal  Loop every row in the matrix lentgh
+  for (let i = 0; i < matrix.length; i++) {
+    // Loop every rowElement in the row
+    for (let rowElement = 0; rowElement < matrix[i].length - 3; rowElement++) {
+      //console.log(matrix[i][rowElement]); // All the elements in the matrix
+      const productHorizontal = matrix[i][rowElement] * matrix[i][rowElement + 1] * matrix[i][rowElement + 2] * matrix[i][rowElement + 3];
+      if (productHorizontal > maxProduct) {
+        maxProduct = productHorizontal;
+      }
+    }
+  }
+  console.log(`Max product horizontally is: ${maxProduct.toLocaleString('de-DE')}`);
+
+  // Vertical
+  for (let i = 0; i < matrix.length - 3; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      const product =
+        matrix[i][j] * matrix[i + 1][j] * matrix[i + 2][j] * matrix[i + 3][j];
+      if (product > maxProduct) {
+        maxProduct = product;
+      }
+    }
+  }
+  console.log(`Max product vertically is: ${maxProduct.toLocaleString('de-DE')}`);
+  return maxProduct;
 }
 
+console.log(`The greatest product of four numbers is: ${greatestProduct(matrix).toLocaleString('de-DE')}`);
 
 module.exports = {
   maxOfTwoNumbers,
