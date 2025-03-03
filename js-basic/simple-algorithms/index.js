@@ -271,7 +271,7 @@ function greatestProduct(matrix) {
   }
   console.log(`Max product horizontally is: ${maxProduct.toLocaleString('de-DE')}`);
 
-  // Vertical
+  // ** Vertical
   for (let i = 0; i < matrix.length - 3; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
       const product =
