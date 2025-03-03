@@ -1,4 +1,4 @@
-export function Header({ className, children }) {
+export default function Header({ className, children }) {
     return (
         <header className={className}>
             {children}
