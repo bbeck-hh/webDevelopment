@@ -1,5 +1,5 @@
-import { Header } from "./components/Header";
-import { Navigation } from "./components/Navigation";
+import Header from "./components/Header";
+import Navigation from "./components/Navigation";
 import avatar from "./img/avatar.jpg";
 import logo from "./img/logo.jpg";
 import "./styles.css";
