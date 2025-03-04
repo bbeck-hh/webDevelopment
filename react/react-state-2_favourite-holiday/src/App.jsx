@@ -1,14 +1,23 @@
+import { useState } from "react";
 import "./styles.css";
 
 export default function App() {
+  const [holiday, setHoliday] = useState("");
+  const [date, setDate] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
+    const holidayValue = event.target.elements.holiday.value;
+    const dateValue = event.target.elements.date.value;
+    setHoliday(holidayValue);
+    setDate(dateValue);
   }
 
   return (
     <div className="container">
       <h1>Favourite Holiday Data Storage</h1>
       <h2 id="favourite-holiday">Please tell us your favourite holiday!</h2>
+      {/* bo form */}
       <form
         className="form"
         aria-labelledby="favourite-holiday"
@@ -27,12 +36,13 @@ export default function App() {
           Submit
         </button>
       </form>
+      {/* eo form */}
       <h2>Output of Submitted Data</h2>
       <p>
-        Favourite Holiday: <span className="output">New Year</span>
+        Favourite Holiday: <span className="output">{holiday}</span>
       </p>
       <p>
-        Date: <span className="output">Well...</span>
+        Date: <span className="output">{date}</span>
       </p>
     </div>
   );
