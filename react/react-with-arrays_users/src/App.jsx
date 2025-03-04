@@ -8,13 +8,14 @@ export default function App() {
   return (
     <main className="app">
       <Title text="ClientBoard" />
-      {/* <div className="app__card-grid">
-        <Card user={USERS[0]} />
-      </div> */}
-      {USERS.map((user) => {
-        return <Card user={user} key={user.id} />;
-      })
-      }
+      <div className="app__card-grid">
+        {USERS.map((user) => {
+          // Übergabe des Nutzers als Prop an das Card-Element und erstellen eines eindeutigen Schlüssels
+          return <Card user={user} key={user.id} />;
+        })
+        }
+      </div>
+
     </main>
   );
 }
