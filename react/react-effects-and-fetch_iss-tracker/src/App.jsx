@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Controls from "./components/Controls";
 import Map from "./components/Map";
 import "./styles.css";
 
 const URL = "https://api.wheretheiss.at/v1/satellites/25544";
+
 
 export default function App() {
   const [coords, setCoords] = useState({
@@ -11,7 +12,26 @@ export default function App() {
     latitude: 0,
   });
 
-  async function getISSCoords() {}
+  useEffect(() => {
+    getISSCoords();
+  }, []);
+
+  async function getISSCoords() {
+    try {
+      const response = await fetch(URL);
+      if (!response.ok) {
+        throw new Error(`API antwortete nicht. Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setCoords({ latitude: data.latitude, longitude: data.longitude });
+
+    } catch (error) {
+      console.error(error);
+      console.error(error.message = "Sorry, there went somethig wrong. Come back later again:");
+    }
+  }
+
 
   return (
     <main>
