@@ -2,12 +2,25 @@ import { useEffect, useState } from "react";
 
 export default function PokemonList() {
   const [pokemon, setPokemon] = useState([]);
+  const [page, setPage] = useState(0);
+
+  function handleNextPage() {
+    console.log("Vorwärts");
+    setPage((weiterPage) => weiterPage + 1);
+  }
+
+  function handlePreviousPage() {
+    console.log("Zurück");
+    setPage((zurueckPage) => zurueckPage - 1);
+  }
+
 
   useEffect(() => {
     async function loadPokemon() {
       try {
+        const offset = page * 20;
         const response = await fetch(
-          "https://pokeapi.co/api/v2/pokemon?offset=0"
+          `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`
         );
         const data = await response.json();
         setPokemon(data.results);
@@ -17,12 +30,12 @@ export default function PokemonList() {
     }
 
     loadPokemon();
-  }, []);
+  }, [page]); // useEffect wird bei jeder Änderung von 'page' ausgeführt
 
   return (
     <main>
-      <button type="button">Previous Page</button>
-      <button type="button">Next Page</button>
+      <button type="button" onClick={handlePreviousPage}>Previous Page</button>
+      <button type="button" onClick={handleNextPage}>Next Page</button>
       <ul>
         {pokemon.map(({ name }) => (
           <li key={name}>{name}</li>
