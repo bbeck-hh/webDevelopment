@@ -6,7 +6,7 @@ export default function Form({ onAddAnimal }) {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
 
-    onAddAnimal(data);
+    onAddAnimal(data); // Kommt aus der App.jsx
 
     event.target.reset();
     event.target.elements.name.focus();
