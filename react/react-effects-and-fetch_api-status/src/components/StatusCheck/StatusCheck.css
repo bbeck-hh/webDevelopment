@@ -13,6 +13,9 @@
   color: var(--color-foam);
   padding: 0.5rem;
 }
+.status-check__button:hover {
+  cursor: pointer;
+}
 
 .status-check__heading {
   margin: 0;
