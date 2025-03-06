@@ -6,11 +6,13 @@ export default function PokemonList() {
 
   function handleNextPage() {
     console.log("Vorwärts");
+    // Erhöhe die aktuelle Seitenzahl um 1 (Aktualiesierung der Seitenzahl)
     setPage((weiterPage) => weiterPage + 1);
   }
 
   function handlePreviousPage() {
     console.log("Zurück");
+    // Erhöhe die aktuelle Seitenzahl um 1 (Aktualiesierung der Seitenzahl)
     setPage((zurueckPage) => zurueckPage - 1);
   }
 
