@@ -30,7 +30,7 @@ export default function App() {
           onClick={handleIncrement}>
           +
         </button>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 }
