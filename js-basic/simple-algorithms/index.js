@@ -1,9 +1,12 @@
+console.clear();
 // https://github.com/wd-bootcamp/web-exercises/blob/main/sessions/mock-interview-1/simple-algorithms_solutions/index.js
 
 
 // Find the maximum
 function maxOfTwoNumbers(num1, num2) {
-  // TODO:  
+  //  Comparison: The code checks if num1 is greater than num2.
+  // If yes, num1 is returned.
+  // If no, num2 is returned.
   if (num1 > num2) {
     return num1;
   }
@@ -99,7 +102,6 @@ const words3 = [
 ];
 
 function uniquifyArray(words) {
-  // TODO:
   // Create a new array to store the unique words
   // itearate over the array && check if the word is already in the new array
   // if not, add it to the new array
@@ -298,3 +300,176 @@ module.exports = {
   sum,
   greatestProduct
 }
+
+console.log(`
+${'*'.repeat(10)}  ${'*'.repeat(10)}`);
+
+// TODO
+// Die äußere Schleife geht jedes Element im Array durch.
+// Die innere Schleife prüft jedes nachfolgende Element im Array,
+// ob die Summe mit dem aktuellen Element den target-Wert ergibt.
+
+/* 
+Dry Run Schritt für Schritt:
+Initiale Werte:
+numbers = [2, 7, 11, 15]
+target = 9
+1. Iteration (äußere Schleife):
+    i = 0, numbers[0] = 2
+
+Innere Schleife:
+
+    j = 1, numbers[1] = 7
+Berechnung: numbers[0] + numbers[1] = 2 + 7 = 9
+Bedingung erfüllt: 9 == target (9), also wird [0, 1] zurückgegeben.
+2. Rückgabewert:
+Da die Bedingung erfüllt ist, wird die Funktion an dieser Stelle beendet und [0, 1] wird zurückgegeben.
+*/
+
+
+
+const exampleNumbers = [2, 7, 11, 15];
+const exampleTarget = 9;
+
+const result1 = twoSums(exampleNumbers, exampleTarget); // Expected Output: [0,1]
+console.log(result1);
+
+// Explanation: Because exampleNumbers[0] + exampleNumbers[1] == 9, we return [0, 1].
+
+function twoSums(numbers, target) {
+  for (let index = 0; index < numbers.length; index++) {
+    for (let i = index + 1; i < numbers.length; i++) {
+      let newIndex = numbers[i];
+      if (numbers[index] + newIndex === target) {
+        return [index, i];
+      }
+    }
+  }
+  return null; // Falls keine zwei passenden Zahlen gefunden werden.
+}
+
+//#####################################################################
+
+console.log(`${'*'.repeat(10)} Who likes it? ${'*'.repeat(10)}`);
+
+function likes(names) {
+  // TODO
+  // Empty array -> "no one likes this"
+  // Array length 1 -> "<Name> likes this"
+  // Array length 2 -> "<Name1> and <Name2> like this"
+  // Array length 3 -> "<Name1>, <Name2> and <Name3> like this"
+  // Array length > 3 -> "<Name1>, <Name2> and <length - 2> others like this"
+  console.log(`${names.length} `);
+
+  switch (names.length) {
+    case 0:
+      console.log(`no one likes this`);
+      break;
+    case 1:
+      console.log(`${names[0]} likes this`);
+      break;
+    case 2:
+      console.log(`${names[0]} and ${names[1]} like this`);
+      break;
+    case 3:
+      console.log(`${names[0]}, ${names[1]} and ${names[2]} like this`);
+      break;
+    default:
+      console.log(` ${names[0]}, ${names[1]} and ${names.length - 2} others like this`)
+  }
+}
+
+likes(["Peter", "Paul", "Mary", "John", "Jane"]);
+
+//#####################################################################
+
+console.log(`
+${'*'.repeat(10)} Count characters in your string ${'*'.repeat(10)}`);
+
+function count(string) {
+  // TODO
+  // check if string is empty true -> add {} to the object
+  // create an object that store the characters
+  // split the string in characters and store in array
+  // Loop over the array 
+  // if the character is in the object add 1 to the value
+  // if not then add the character to the array and the value is 1
+  // when finsh return the object
+  let objCharacters = {};
+  if (string === "") {
+    return {}
+  }
+
+  const lettersArray = string.split('');
+
+  for (let i = 0; i < lettersArray.length; i++) {
+    if (lettersArray[i] in objCharacters) {
+      objCharacters[lettersArray[i]] += 1;
+    }
+    else {
+      objCharacters[lettersArray[i]] = 1;
+    }
+  }
+
+
+  return objCharacters;
+}
+console.log(count("abaBbb"));
+//#####################################################################
+
+console.log(`
+${'*'.repeat(10)} Pete, the baker ${'*'.repeat(10)}`);
+//TODO
+// Create two objects -> recipe and available.
+// Loop over the recipe and check if the key is in the available object
+// if not return 0
+// if yes check if the value of the key is greater than the value of the key in the available object
+
+function cakes(recipe, available) {
+  let recipeObj = recipe;
+  let availableObj = available;
+  let keys1 = Object.keys(recipeObj);
+
+  for (let i = 0; i < keys1.length; i++) {
+    console.log(`Checking ingredient Key: ${keys1[i]}`);
+
+    // Are all the ingredients needed also available?
+    if (!(keys1[i] in availableObj)) {
+      console.log(`The ingredient: ${keys1[i]} is not available, sorry no cake for you!😢`);
+      return 0;
+    }
+    // Are there enough ingredients?
+    if (recipeObj[keys1[i]] > availableObj[keys1[i]]) {
+      console.log(`The value of the key ${keys1[i]}is greater than the value of the key in the available object`);
+      return 0;
+    }
+  }
+
+  let minCakes = Infinity;
+  for (let i = 0; i < keys1.length; i++) {
+    console.log(`Avaible: ${availableObj[keys1[i]]} Needed: ${recipeObj[keys1[i]]}  `);
+
+    const possibleCakes = Math.floor(availableObj[keys1[i]] / recipeObj[keys1[i]]);
+    if (possibleCakes < minCakes) {
+      minCakes = possibleCakes;
+    }
+  }
+  console.log(`The minimum number of cakes that can be made is: ${minCakes}`);
+
+  return minCakes;
+}
+
+// Beispielaufrufe der Funktion cakes
+console.log(cakes(
+  { flour: 500, sugar: 200, eggs: 1 },
+  { flour: 1200, sugar: 1200, eggs: 5, milk: 200 }
+));
+// muss 2 zurückgeben
+
+// console.log(cakes(
+//   { apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100 },
+//   { sugar: 500, flour: 2000, milk: 2000 }
+// ));
+// muss 0 zurückgeben
+
+//#####################################################################
