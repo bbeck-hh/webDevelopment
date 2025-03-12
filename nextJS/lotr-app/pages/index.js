@@ -1,7 +1,17 @@
-export default function HomePage() {
+import { introduction } from "@/lib/data";
+import Link from "next/link";
+
+const HomePage = () => {
   return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
-  );
-}
+    <>
+      <h1>Lord of the Rings</h1>
+      <div>
+        <p>{introduction}</p>
+        <Link href="/volumes">
+          View volumes</Link>
+      </div>
+    </>
+  )
+};
+
+export default HomePage;
