@@ -1,26 +1,37 @@
+import Main from "@/components/Main/Main";
+import { introduction, volumes } from "@/lib/data";
 import Link from "next/link";
-import { introduction } from "../../lib/data";
+import { useRouter } from "next/router";
+import { v4 as uuid } from "uuid";
 
 export default function Volumes() {
+  const router = useRouter();
+  //console.log(router);
+  const { slug } = router.query;
+  //console.log(router.slug);
+
+  function handelRandomBook() {
+    let randomBook = Math.floor(Math.random() * volumes.length);
+    // Verlinke zum zufälligen Buch. Beachte den Slug von wo er hinterlegt ist.
+    router.push(`/volumes/${volumes[randomBook].slug}`);
+  }
+
   return (
     <>
-      <h1>The Lord of the Rings</h1>
-      <p>{introduction}</p>
-      <ul>
-        <li>
-          <Link href="/volumes/the-fellowship-of-the-ring">
-            The Fellowship of the Ring
-          </Link>
-        </li>
-        <li>
-          <Link href="/volumes/the-two-towers">The Two Towers</Link>
-        </li>
-        <li>
-          <Link href="/volumes/the-return-of-the-king">
-            The Return of the King
-          </Link>
-        </li>
-      </ul>
+      <Main>
+        <h1>The Lord of the Rings</h1>
+        <p>{introduction}</p>
+        <ul>
+          {volumes.map(({ slug, title }) => (
+            <li key={uuid()}>
+              <Link href={`/volumes/${slug}`}>{title}</Link>
+            </li>
+          ))}
+        </ul>
+        <button onClick={handelRandomBook} style={{ marginTop: "1rem" }}>
+          Random Book
+        </button>
+      </Main>
     </>
   );
 }
