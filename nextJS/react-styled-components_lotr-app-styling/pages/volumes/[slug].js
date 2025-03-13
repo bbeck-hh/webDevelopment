@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { volumes } from "../../lib/data";
 
 // Ändere die Hintergrundfarbe des body-Tags auf die in der data.js-Datei definierte Farbe volume.color
@@ -43,12 +43,15 @@ export default function VolumeDetail() {
           </li>
         ))}
       </ul>
-      <Image
-        src={cover}
-        alt={`Cover image of ${title}`}
-        width={140}
-        height={230}
-      />
+      <LinkedImage href="/volumes">
+        <Image
+          src={cover}
+          alt={`Cover image of ${title}`}
+          width={140}
+          height={230}
+        />
+
+      </LinkedImage>
       {previousVolume ? (
         <div>
           <Link href={`/volumes/${previousVolume.slug}`}>
@@ -67,8 +70,21 @@ export default function VolumeDetail() {
   );
 }
 
-// Ändere die Hintergrundfarbe des body-Tags auf die in der data.js-Datei definierte Farbe volume.color
+const LinkedImage = styled(Link)`
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+    &:before {
+      content: "Nice";
+      border: 1px solid blue;
+      background-color: pink;
+      position: relative;
+      top: -100px;
+      margin-right: 10px;    }
+  }
 
-// const StyledBody = styled.body`
-//   background-color: ${(props) => props.theme.color};
-// `;
+  > img {
+    border: 12px solid red;
+    width: 140px;
+  }
+`;
