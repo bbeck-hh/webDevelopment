@@ -15,7 +15,7 @@ export const volumes = [
         title: "The Ring Goes South",
       },
     ],
-    color: "#242C31",
+    color: "#3e842f",
   },
   {
     slug: "the-two-towers",
@@ -33,7 +33,7 @@ export const volumes = [
         title: "The Ring Goes East",
       },
     ],
-    color: "#532724",
+    color: "#ec3a4e",
   },
   {
     slug: "the-return-of-the-king",
@@ -51,7 +51,7 @@ export const volumes = [
         title: "The End of the Third Age",
       },
     ],
-    color: "#202C2C",
+    color: "#6f9999",
   },
 ];
 
