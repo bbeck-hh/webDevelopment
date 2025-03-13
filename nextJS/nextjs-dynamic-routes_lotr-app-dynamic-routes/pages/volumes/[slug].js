@@ -11,9 +11,9 @@ export default function LorPage() {
 
     //console.log(`router hat : ${JSON.stringify(router)}`);
 
-    // Ladezustand oder Fehlerbehandlung
+    // Ladezustand oder Fehlerbehandlung -> Warten, bis Query bereit ist
     if (!router.isReady) {
-        return <div>Loading...</div>; // Warten, bis Query bereit ist
+        return <div>Loading...</div>;
     }
 
     if (!currentVolume) {
