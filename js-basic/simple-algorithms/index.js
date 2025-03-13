@@ -473,3 +473,73 @@ console.log(cakes(
 // muss 0 zurückgeben
 
 //#####################################################################
+
+console.log(`
+${'*'.repeat(10)} cameCase ${'*'.repeat(10)}`);
+
+function toCamelCase(...strings) {
+  return strings.map(str =>
+    str
+      .split(/[-_]/)
+      .map((word, index) =>
+        index === 0
+          ? word
+          : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      )
+      .join('')
+  );
+}
+
+let str1 = "the-stealth-warrior";
+let str2 = "The_Stealth_Warrior";
+let str3 = "The_Stealth-Warrior";
+
+const result2 = toCamelCase(...[str1, str2, str3]);
+
+console.log(result2);
+
+//#####################################################################
+
+console.log(`
+${'*'.repeat(10)} Two Sum ${'*'.repeat(10)}`);
+// TODO
+// Create a function that takes an array of numbers and a target number.
+// The function should return an array with the indices of the two numbers that add up to the target number.
+// Array length 2 or more
+// Array contains only numbers
+// The target number is a number
+
+
+function twoSum(numbers, target) {
+  if (numbers.length < 2 && numbers !== Number) {
+    console.log(`Bedingung ist nicht erfüllt ${numbers.length}`);
+    return null
+  }
+  const numMap = {};
+
+  for (let i = 0; i < numbers.length; i++) {
+    // Welche Zahl brauche ich, um mit 1(num) die 4(target) zu erreichen?" Antwort: 3
+    const complement = target - numbers[i];
+    // complement = 4 - 1 = 3
+    console.log(`Complement: ${complement}`);
+
+    // Prüfen ob die 3 schon in numMap ist
+    if (numMap[complement] !== undefined) {
+      return [numMap[complement], i];
+    }
+
+    // Wenn nicht, dann speichere die 1 in numMap numMap = { 1: 0 }
+    numMap[numbers[i]] = i;
+    console.log(`numMap: ${numMap[numbers[i]]}`);
+    console.log(`-------`);
+
+  }
+
+  return [];
+}
+console.log(twoSum([1, 2, 3], 4));
+
+twoSum([1, 2, 3], 4) // returns [0, 2] or [2, 0]
+//twoSum([3, 2, 4], 6) // returns [1, 2] or [2, 1]
+
+//#####################################################################
