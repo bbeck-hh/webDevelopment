@@ -3,6 +3,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled, { createGlobalStyle } from "styled-components";
 import { volumes } from "../../lib/data";
+import ArrowLeft from "../../public/images/arrow-left.svg";
+import ArrowRight from "../../public/images/arrow-right.svg";
+import ChevronLeft from "../../public/images/chevron-left.svg";
 
 // Ändere die Hintergrundfarbe des body-Tags auf die in der data.js-Datei definierte Farbe volume.color
 // Nutze props.$bgColor
@@ -33,7 +36,8 @@ export default function VolumeDetail() {
     <>
       {/* Setze props $bgColor={color} und übergebe color(createGlobalStyle)  */}
       <GlobalStyle $bgColor={color} />
-      <Link href="/volumes">← All Volumes</Link>
+
+      <Link href="/volumes"><ChevronLeft /> All Volumes</Link>
       <h1>{title}</h1>
       <p>{description}</p>
       <ul>
@@ -55,14 +59,14 @@ export default function VolumeDetail() {
       {previousVolume ? (
         <div>
           <Link href={`/volumes/${previousVolume.slug}`}>
-            ← Previous Volume: {previousVolume.title}
+            <ArrowLeft /> Previous Volume: {previousVolume.title}
           </Link>
         </div>
       ) : null}
       {nextVolume ? (
         <div>
           <Link href={`/volumes/${nextVolume.slug}`}>
-            Next Volume: {nextVolume.title} →
+            Next Volume: {nextVolume.title} <ArrowRight />
           </Link>
         </div>
       ) : null}
