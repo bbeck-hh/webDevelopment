@@ -1,7 +1,7 @@
-import React from "react";
-import styled, { css } from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import React from "react";
+import styled, { css } from "styled-components";
 
 const Nav = styled.nav`
   display: flex;
@@ -42,7 +42,7 @@ export default function Navigation({ players }) {
         href="/history"
         path={router.pathname === "/history" ? "active" : ""}
       >
-        History
+        HistoryQ
       </StyledLink>
     </Nav>
   );
