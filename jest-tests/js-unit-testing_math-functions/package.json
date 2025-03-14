@@ -1,12 +1,12 @@
 {
-  "name": "js-unit-testing_get-animal",
+  "name": "js-unit-testing_math-functions",
   "version": "0.0.0-unreleased",
-  "description": "Challenge for the JS Unit Testing Session: getAnimal()",
+  "description": "Challenge for the JS Unit Testing Session: Mathematical Functions",
   "main": "index.js",
   "scripts": {
     "start": "npx -y live-server@latest --port=3000",
     "lint": "npx -y eslint@latest .",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx -y jest@latest -w"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx -y jest@latest --watchAll"
   },
   "type": "module",
   "devDependencies": {
