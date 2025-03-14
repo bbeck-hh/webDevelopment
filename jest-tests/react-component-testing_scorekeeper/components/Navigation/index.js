@@ -42,7 +42,7 @@ export default function Navigation({ players }) {
         href="/history"
         path={router.pathname === "/history" ? "active" : ""}
       >
-        HistoryQ
+        History
       </StyledLink>
     </Nav>
   );
