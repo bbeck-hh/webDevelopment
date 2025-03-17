@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import useSWR from "swr";
 import Controls from "../Controls/index";
 import Map from "../Map/index";
 
 const URL = "https://api.wheretheiss.at/v1/satellites/25544";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function ISSTracker() {
   const [coords, setCoords] = useState({
@@ -10,27 +13,20 @@ export default function ISSTracker() {
     latitude: 0,
   });
 
-  async function getISSCoords() {
-    try {
-      const response = await fetch(URL);
-      if (response.ok) {
-        const data = await response.json();
-        setCoords({ longitude: data.longitude, latitude: data.latitude });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // SWR-Hook verwenden um Daten zu fetchen. Refresh-Intervall von 2 Sekunden, und manuelles Aktualisieren erlauben
+  const { data, error, isLoading, mutate } = useSWR(URL, fetcher, {
+    refreshInterval: 2000, // Aktualisiert alle 2 Sekunde
+  });
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      getISSCoords();
-    }, 5000);
+    if (data) {
+      setCoords({ longitude: data.longitude, latitude: data.latitude });
+    }
+  }, [data]);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  // Lade- und Fehlerzustände abfangen
+  if (error) return <div>Failed to load ISS data</div>
+  if (isLoading || !data) return <div>Loading ISS data...</div>;
 
   return (
     <main>
@@ -38,7 +34,7 @@ export default function ISSTracker() {
       <Controls
         longitude={coords.longitude}
         latitude={coords.latitude}
-        onRefresh={getISSCoords}
+        onRefresh={() => mutate()} // Ermöglicht manuelles Aktualisieren
       />
     </main>
   );
