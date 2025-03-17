@@ -14,19 +14,19 @@ export default function ISSTracker() {
   });
 
   // SWR-Hook verwenden um Daten zu fetchen. Refresh-Intervall von 2 Sekunden, und manuelles Aktualisieren erlauben
-  const { data, error, isLoading, mutate } = useSWR(URL, fetcher, {
+  const { data: position, error, isLoading, mutate } = useSWR(URL, fetcher, {
     refreshInterval: 2000, // Aktualisiert alle 2 Sekunde
   });
 
   useEffect(() => {
-    if (data) {
-      setCoords({ longitude: data.longitude, latitude: data.latitude });
+    if (position) {
+      setCoords({ longitude: position.longitude, latitude: position.latitude });
     }
-  }, [data]);
+  }, [position]);
 
   // Lade- und Fehlerzustände abfangen
   if (error) return <div>Failed to load ISS data</div>
-  if (isLoading || !data) return <div>Loading ISS data...</div>;
+  if (isLoading || !position) return <div>Loading ISS data...</div>;
 
   return (
     <main>
