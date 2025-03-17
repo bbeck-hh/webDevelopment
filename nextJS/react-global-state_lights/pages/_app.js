@@ -45,6 +45,8 @@ const initialLightStatus = [
   },
 ]
 
+// https://github.com/wd-bootcamp/web-exercises/blob/main/sessions/react-global-state/lights_solution/pages/_app.js
+
 export default function App({ Component, pageProps }) {
   const [lampen, setLampen] = useState(initialLightStatus);
 
