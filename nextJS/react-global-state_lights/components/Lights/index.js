@@ -11,33 +11,15 @@ const StyledLights = styled.ul`
   justify-content: center;
 `;
 
-export default function Lights() {
+export default function Lights({ lampen, onToggleLampe }) {
   return (
-    <StyledLights>
-      <li>
-        <Light name="Living Room" />
-      </li>
-      <li>
-        <Light name="Kitchen" />
-      </li>
-      <li>
-        <Light name="Bedroom" />
-      </li>
-      <li>
-        <Light name="Bathroom" />
-      </li>
-      <li>
-        <Light name="Garage" />
-      </li>
-      <li>
-        <Light name="Porch" />
-      </li>
-      <li>
-        <Light name="Garden" />
-      </li>
-      <li>
-        <Light name="Office" />
-      </li>
+    <StyledLights lampen={lampen}>
+      {
+        lampen.map((lampe) => {
+          return <li key={lampe.id}><Light name={lampe.name} isOn={lampe.isOn} onToggleLampe={onToggleLampe} /></li>
+        })
+      }
+
     </StyledLights>
   );
 }
