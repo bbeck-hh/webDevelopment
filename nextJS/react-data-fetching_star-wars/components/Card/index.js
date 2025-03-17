@@ -1,6 +1,6 @@
 import { DescriptionList, StyledCard } from "./Card.styled";
 
-export default function Card({ id, name, height, eyeColor, birthYear }) {
+export default function Card({ id, name, height, eyeColor, birthYear, films }) {
   return (
     <StyledCard>
       <h1>Name: {name}</h1>
@@ -13,6 +13,8 @@ export default function Card({ id, name, height, eyeColor, birthYear }) {
         <dd>{eyeColor}</dd>
         <dt>Birth Year:</dt>
         <dd>{birthYear}</dd>
+        <dt>Films:</dt>
+        <dd>{films}</dd>
       </DescriptionList>
     </StyledCard>
   );
