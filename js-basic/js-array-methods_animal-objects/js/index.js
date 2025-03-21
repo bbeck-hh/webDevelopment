@@ -80,6 +80,34 @@ const animals = [
 // Hint: Besides the array method, check out the string method `startsWith()`.
 const firstAnimalStartingWithLetterG = null;
 
+// Find the index of the first animal whose name starts with "m"
+const firstAnimalStartingWithLetterMIndex = animals.findIndex((animal) =>
+  animal.name.startsWith("m")
+);
+
+// Use the ternary operator to return the index or -1 if not found
+const result = firstAnimalStartingWithLetterMIndex !== -1
+  ? firstAnimalStartingWithLetterMIndex
+  : -1;
+
+console.log(`Index: ${result}`);
+
+// Find the first animal whose name starts with "m" and log its name
+const firstAnimalStartingWithLetterM = animals.find((animal) =>
+  animal.name.startsWith("m")
+);
+
+if (firstAnimalStartingWithLetterM) {
+  console.log(`Name: ${firstAnimalStartingWithLetterM.name}`);
+} else {
+  console.log("No animal found with a name starting with 'm'.");
+}
+
+
+
+
+
+
 const indexOfAnimalWithNameLongerFive = null;
 
 // Note:
@@ -113,13 +141,7 @@ const weightOfAllAnimalsInAfrica = null;
 const averageWeightOfAllAnimalsInAfrica = null;
 
 export {
-  firstAnimalStartingWithLetterG,
-  indexOfAnimalWithNameLongerFive,
-  animalsSortedAlphabetically,
-  animalsSortedByWeightStartingWithLowest,
-  animalsSortedByWeightReversed,
-  animalWithWeightMoreThanFivehundredExists,
-  allAnimalsInEuropeWeighLessThanOnehundred,
-  weightOfAllAnimalsInAfrica,
-  averageWeightOfAllAnimalsInAfrica,
+  allAnimalsInEuropeWeighLessThanOnehundred, animalsSortedAlphabetically, animalsSortedByWeightReversed, animalsSortedByWeightStartingWithLowest, animalWithWeightMoreThanFivehundredExists, averageWeightOfAllAnimalsInAfrica, firstAnimalStartingWithLetterG,
+  indexOfAnimalWithNameLongerFive, weightOfAllAnimalsInAfrica
 };
+
