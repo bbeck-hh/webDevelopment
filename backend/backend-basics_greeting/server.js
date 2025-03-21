@@ -1,8 +1,11 @@
 import { createServer } from "node:http";
 
 export const server = createServer((req, res) => {
-    console.log(`Der Code läuft auf dem Server`);
-    console.log(`Der Request-URL ist: ${req.url}`);
+    // Server
+    //console.log(`Server.js - Der Code läuft auf dem Server`);
+    console.log(`Server.js - Der Request-URL ist: ${req.url}`);
+
+    // Client
     res.end('Hallo Nase');
 });
 
