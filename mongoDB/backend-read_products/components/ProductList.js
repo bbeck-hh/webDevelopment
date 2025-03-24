@@ -1,6 +1,6 @@
-import useSWR from "swr";
 import StyledLink from "@/components/Link";
 import styled from "styled-components";
+import useSWR from "swr";
 
 export default function ProductList() {
   const { data, isLoading } = useSWR("/api/products");
@@ -19,7 +19,7 @@ export default function ProductList() {
       <StyledList>
         {data.map((product) => (
           <li key={product.id}>
-            <StyledLink href={`/${product.id}`}>{product.name}</StyledLink>
+            <StyledLink href={`/${product._id}`}>{product.name}</StyledLink>
           </li>
         ))}
       </StyledList>

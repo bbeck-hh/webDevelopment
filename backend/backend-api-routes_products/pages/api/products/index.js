@@ -1,5 +1,6 @@
 import Product from "@/db/models/Product";
 import { getAllProducts } from "@/services/productServices";
+import dbConnect from "@db/connect"
 
 // This is the API route that will return all products
 // The URL for this route is /api/products
