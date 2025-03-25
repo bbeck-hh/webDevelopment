@@ -97,7 +97,7 @@ const StyledList = styled.ul`
         label {
             margin-bottom: 0; /* Entfernt den unteren Abstand */
             margin-right: 1rem; /* Abstand zwischen Label und Input */
-            flex: 0 0 150px; /* Gleiche Breite für alle Labels */
+            flex: 0 0 15rem; /* Gleiche Breite für alle Labels */
         }
 
         input,
