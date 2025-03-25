@@ -25,7 +25,7 @@ export default function ProductForm() {
 
         if (response.ok) {
             console.log("Product created");
-            mutate("/api/products"); // Aktualisiert die SWR-Daten
+            mutate("/api/products"); // Aktualisiert die SWR-Daten on the fly
         } else {
             console.error("Product not created");
         }
