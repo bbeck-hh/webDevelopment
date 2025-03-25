@@ -1,45 +1,60 @@
 import StyledButton from "@/components/Button";
 import styled from "styled-components";
-import { mutate } from "swr";
 
-export default function ProductForm() {
+const DEFAULT_VALUES = {
+  name: "",
+  description: "",
+  price: 0,
+  currency: "USD",
+};
+
+export default function ProductForm({
+  onSubmit,
+  values = DEFAULT_VALUES,
+  isEditMode = false,
+}) {
   async function handleSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const productData = Object.fromEntries(formData);
 
-    const response = await fetch("/api/products", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(productData),
-    });
-    if (response.ok) {
-      mutate("/api/products");
-    }
+    await onSubmit(productData);
+
     event.target.reset();
   }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <StyledHeading>Add a new Fish</StyledHeading>
+      <StyledHeading>
+        {isEditMode ? "Edit a Fish" : "Add a new Fish"}
+      </StyledHeading>
       <StyledLabel htmlFor="name">
         Name:
-        <input type="text" id="name" name="name" />
+        <input type="text" id="name" name="name" defaultValue={values.name} />
       </StyledLabel>
       <StyledLabel htmlFor="description">
         Description:
-        <input type="text" id="description" name="description" />
+        <input
+          type="text"
+          id="description"
+          name="description"
+          defaultValue={values.description}
+        />
       </StyledLabel>
       <StyledLabel htmlFor="price">
         Price:
-        <input type="number" id="price" name="price" min="0" />
+        <input
+          type="number"
+          id="price"
+          name="price"
+          min="0"
+          defaultValue={values.price}
+        />
       </StyledLabel>
       <StyledLabel htmlFor="currency">
         Currency:
-        <select id="currency" name="currency">
+        <select id="currency" name="currency" defaultValue={values.currency}>
           <option value="EUR">EUR</option>
           <option value="USD">USD</option>
           <option value="GBP">GBP</option>
